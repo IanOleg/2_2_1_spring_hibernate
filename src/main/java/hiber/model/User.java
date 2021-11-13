@@ -21,9 +21,11 @@ public class User {
    @Column(name = "email")
    private String email;
 
-//   @OneToOne
-//   @JoinColumn(name = "id_car")
-   //private Car car;
+   @OneToOne(fetch = FetchType.LAZY,
+             cascade =CascadeType.PERSIST
+   )
+   @JoinColumn(name = "id_car")
+   private Car car;
 
    public User() {}
    
@@ -61,13 +63,13 @@ public class User {
       return email;
    }
 
-//   public void setCar(Car car) {
-//      this.car = car;
-//   }
-//
-//   public Car getCar() {
-//      return car;
-//   }
+   public void setCar(Car car) {
+      this.car = car;
+   }
+
+   public Car getCar() {
+      return car;
+   }
 
    public void setEmail(String email) {
       this.email = email;
