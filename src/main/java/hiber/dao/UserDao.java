@@ -9,6 +9,4 @@ public interface UserDao {
    void add(User user);
    List<User> listUsers();
    List<User>  getUserByModelAndSeries(String model, int series);
-   void deleteUser(int id);
-   void deleteCar(int id);
 }
